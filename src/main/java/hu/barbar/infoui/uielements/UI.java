@@ -11,6 +11,7 @@ import javax.swing.JPanel;
 import hu.barbar.infoui.InfoUIApp;
 import hu.barbar.infoui.uielements.widgets.ConditionText;
 import hu.barbar.infoui.uielements.widgets.HumidityAndPressure;
+import hu.barbar.infoui.uielements.widgets.LastUpdate;
 import hu.barbar.infoui.uielements.widgets.Temp;
 import hu.barbar.owm.api.WeatherResponse;
 
@@ -43,7 +44,8 @@ public class UI {
 		JPanel placeHolder = new JPanel();
 		placeHolder.setBackground(Color.BLACK);
 		
-		JPanel leftPanel = new JPanel(new GridLayout(8,2));
+		JPanel leftPanel = new JPanel(new GridLayout(8,1));
+		
 		leftPanel.setBackground(Color.BLACK);
 		mainPanel.add(leftPanel, BorderLayout.WEST);
 		elementsToShowWeather = new ArrayList<WeatherIF>();
@@ -57,6 +59,9 @@ public class UI {
 		HumidityAndPressure hp = new HumidityAndPressure();
 		elementsToShowWeather.add(hp);
 		
+		LastUpdate lastUpdate = new LastUpdate();
+		elementsToShowWeather.add(lastUpdate);
+		
 		leftPanel.add(wp);
 		leftPanel.add(temp);
 		leftPanel.add(placeHolders.get(2));
@@ -64,7 +69,7 @@ public class UI {
 		leftPanel.add(placeHolders.get(4));
 		leftPanel.add(placeHolders.get(5));
 		leftPanel.add(hp);
-		leftPanel.add(hp);
+		leftPanel.add(lastUpdate);
 		
 
 		frame.add(mainPanel);

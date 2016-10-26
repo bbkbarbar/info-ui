@@ -4,26 +4,24 @@ import java.awt.Color;
 import java.awt.Font;
 
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 
-import hu.barbar.infoui.uielements.WeatherIF;
 import hu.barbar.owm.api.WeatherResponse;
 
-public class ConditionText extends WidgetBase {
+public class LastUpdate extends WidgetBase {
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1683565975025133858L;
-
-	private JLabel label = null;
+	private static final long serialVersionUID = 8381176999810011683L;
 	
-	public ConditionText(){
+	private JLabel label = null;
+
+	public LastUpdate() {
 		super();
 		init();
 	}
 	
-	public ConditionText(Color bgColor, Color fgColor){
+	public LastUpdate(Color bgColor, Color fgColor) {
 		super(bgColor, fgColor);
 		init();
 	}
@@ -31,17 +29,16 @@ public class ConditionText extends WidgetBase {
 	private void init(){
 		label = new JLabel(" ");
 		label.setForeground(this.getForegroudColor());
-		
+
 		Font labelFont = label.getFont();
-		int newFontSize = (int)(labelFont.getSize() * 3);
+		int newFontSize = (int) (labelFont.getSize() * 1);
 		label.setFont(new Font(labelFont.getName(), Font.PLAIN, newFontSize));
-		
+
 		this.add(label);
 	}
 
 	public void updateData(WeatherResponse weather) {
-		label.setText(weather.getWeather().getMain());
-		
+		label.setText("Last update: " + weather.getDtFormatted());
 	}
-	
+
 }

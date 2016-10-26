@@ -10,6 +10,7 @@ public class InfoUIApp {
 	private static InfoUIApp me = null;
 	private UI ui = null;
 	
+	
 	public static void main(String[] args) {
 		me = new InfoUIApp();
 	}
@@ -17,8 +18,8 @@ public class InfoUIApp {
 	public InfoUIApp() {
 		this.ui = new UI();
 		
-		WeatherInfoProvider wip = new WeatherInfoProvider();
-		ui.showWeatherOnUI(wip.getCurrentInfos());
+		WeatherInfoProvider wip = new WeatherInfoProvider("7284830");
+		ui.showWeatherOnUI(wip.getCurrentWeather());
 	}
 	
 }
