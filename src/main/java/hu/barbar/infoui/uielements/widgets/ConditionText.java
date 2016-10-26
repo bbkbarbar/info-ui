@@ -1,4 +1,4 @@
-package hu.barbar.infoui.uielements.smallboxes;
+package hu.barbar.infoui.uielements.widgets;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -9,7 +9,7 @@ import javax.swing.JPanel;
 import hu.barbar.infoui.uielements.WeatherIF;
 import hu.barbar.owm.api.WeatherResponse;
 
-public class ConditionText extends JPanel implements WeatherIF {
+public class ConditionText extends WidgetBase {
 
 	/**
 	 * 
@@ -18,18 +18,25 @@ public class ConditionText extends JPanel implements WeatherIF {
 
 	private JLabel label = null;
 	
-	public ConditionText(Color bgColor){
+	public ConditionText(){
 		super();
-		this.setBackground(bgColor);
+		init();
+	}
+	
+	public ConditionText(Color bgColor, Color fgColor){
+		super(bgColor, fgColor);
+		init();
+	}
+	
+	private void init(){
 		label = new JLabel(" ");
-		label.setForeground(Color.WHITE);
+		label.setForeground(this.getForegroudColor());
 		
 		Font labelFont = label.getFont();
 		System.out.println("Default font size: " + labelFont.getSize());
 		int newFontSize = (int)(labelFont.getSize() * 2);
 		int newFontSize2 = (int)(labelFont.getSize() * 3);
 		label.setFont(new Font(labelFont.getName(), Font.PLAIN, newFontSize));
-		/**/
 		
 		this.add(label);
 	}
