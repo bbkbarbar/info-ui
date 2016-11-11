@@ -49,8 +49,8 @@ public class HumidityAndPressure extends WidgetBase {
 		label2.setForeground(this.getForegroudColor());
 
 		Font labelFont = label.getFont();
-		int newFontSize = (int) (labelFont.getSize() * 4);
-		int newFontSize2 = (int) (labelFont.getSize() * 4);
+		int newFontSize = (int) (labelFont.getSize() * 3);
+		int newFontSize2 = (int) (labelFont.getSize() * 3);
 		label.setFont(new Font(labelFont.getName(), Font.PLAIN, newFontSize));
 		label2.setFont(new Font(labelFont.getName(), Font.PLAIN, newFontSize2));
 
