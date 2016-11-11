@@ -2,6 +2,7 @@ package hu.barbar.infoui.uielements;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.util.ArrayList;
 
@@ -27,10 +28,11 @@ public class UI {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setBackground(Color.BLACK);
 
-		frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+		//frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		if (InfoUIApp.MODE_FULLSCREEN) {
 			frame.setUndecorated(true);
 		}
+		frame.setSize(new Dimension(1280, 800));
 		
 		JPanel mainPanel = new JPanel(new BorderLayout());
 		mainPanel.setBackground(Color.BLACK);
